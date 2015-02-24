@@ -7,17 +7,16 @@
 get_header();
 ?>
 
-	<div id="content" class="widecolumn" role="main">
+<div class="page-local-history">
+  <a class="last" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
+</div>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<div role="main">
 
-		<div class="navigation">
-			<div class="alignleft"><?php previous_post_link( '%link', '&laquo; %title' ) ?></div>
-			<div class="alignright"><?php next_post_link( '%link', '%title &raquo;' ) ?></div>
-		</div>
-
-		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-			<h2><?php the_title(); ?></h2>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<article class="news" id="post-<?php the_ID(); ?>">
+	  <div class="article">
+			<h1><?php the_title(); ?></h1>
 
 			<div class="entry">
 				<?php the_content('<p class="serif">' . __('Read the rest of this entry &raquo;', 'kubrick') . '</p>'); ?>
@@ -66,6 +65,6 @@ get_header();
 
 <?php endif; ?>
 
-	</div>
+</div>
 
 <?php get_footer(); ?>

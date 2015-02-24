@@ -12,3 +12,13 @@ Text Domain: kubrick
 	http://www.opensource.org/licenses/gpl-license.php
 
 */
+
+.uomcontent .news-index p a {
+  color: #0084EE;
+  display: inline;
+}
+
+.uomcontent .news-index p a.more-link {
+  display: block;
+  padding-top: 30px;
+}

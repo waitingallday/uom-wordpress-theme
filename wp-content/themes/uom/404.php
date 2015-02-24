@@ -6,6 +6,7 @@
 
 get_header();
 ?>
+
 <div role="main">
   <section class="alt">
     <h2 class="title">Page not found</h2>
@@ -20,7 +21,5 @@ get_header();
     </figure>
   </section>
 </div>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

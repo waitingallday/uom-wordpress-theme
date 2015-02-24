@@ -21,7 +21,7 @@ get_header(); ?>
 		  <article id="post-<?php the_ID(); ?>">
 	      <p class="topic"><?php get_the_category_list(', '); ?></p>
 	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-	      <?php the_content(__('Read the rest of this entry &raquo;', 'kubrick')); ?>
+	      <?php the_content(__('Read more', 'kubrick')); ?>
 		    <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>
 		  </article>
 		<?php endwhile; ?>

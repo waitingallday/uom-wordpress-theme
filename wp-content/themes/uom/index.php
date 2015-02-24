@@ -21,9 +21,10 @@ get_header(); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 		  <article id="post-<?php the_ID(); ?>">
-		  <?php $cats = get_categories();
-		  			print_r($cats); ?>
-	      <p class="topic"></p>
+		  <?php $cats = get_the_category();
+		  			if ($cats.length > 0) { ?>
+	      <p class="topic"><a href="<?php echo get_option('home'); ?>/category/<?php echo $cats[0]['slug'] ?>/"><?php echo ucfirst($cats[0]['name']) ?></a></p>
+		  <?php	} ?>
 	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 	      <?php the_content(__('Read more', 'kubrick')); ?>
 		    <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>

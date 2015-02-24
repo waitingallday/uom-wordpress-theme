@@ -22,8 +22,7 @@ get_header(); ?>
 		<?php while (have_posts()) : the_post(); ?>
 		  <article id="post-<?php the_ID(); ?>">
 		  <?php $cats = get_the_category();
-		  			print_r($cats);
-		  			if ($cats.length > 0) { ?>
+		  			if (count($cats) > 0) { ?>
 	      <p class="topic"><a href="<?php echo get_option('home'); ?>/category/<?php echo $cats[0]['slug'] ?>/"><?php echo ucfirst($cats[0]['name']) ?></a></p>
 		  <?php	} ?>
 	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>

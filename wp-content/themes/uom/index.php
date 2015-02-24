@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="floating"></div>
 <div role="main">
   <header>
-    <h1><a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a></h1>
+    <h1><?php bloginfo('name'); ?></h1>
     <p><?php bloginfo('description'); ?></p>
   </header>
 
@@ -19,18 +19,20 @@ get_header(); ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 		  <article id="post-<?php the_ID(); ?>">
-		    <a href="<?php the_permalink() ?>">
-		      <p class="topic"><?php get_the_category_list(', '); ?></p>
-		      <h1><?php the_title(); ?></h1>
-		      <p><?php the_content(__('Read the rest of this entry &raquo;', 'kubrick')); ?></p>
-		    </a>
+	      <p class="topic"><?php get_the_category_list(', '); ?></p>
+	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+	      <?php the_content(__('Read the rest of this entry &raquo;', 'kubrick')); ?>
 		    <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>
 		  </article>
 		<?php endwhile; ?>
 
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries', 'kubrick')) ?></div>
-			<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;', 'kubrick')) ?></div>
+		<div class="half">
+		  <section class="center">
+		  	<?php next_posts_link(__('Older', 'kubrick')) ?>
+		  </section>
+		  <section class="center">
+		  	<?php previous_posts_link(__('Newer', 'kubrick')) ?>
+		  </section>
 		</div>
 
 	<?php else : ?>

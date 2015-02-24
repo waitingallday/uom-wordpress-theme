@@ -20,13 +20,6 @@ function button_hero_reverse() {
 function single_category_link() {
   $cats = get_the_category();
   if (count($cats) > 0) {
-
-    $cat = $cats[0];
-
-    print_r($cat);
-
-    print_r($cat[slug]);
-
-    return '<p class="topic"><a href="'.get_option('home').'/category/'.$cat['slug'].'">'.ucfirst($cats['name']).'</a></p>';
+    return '<p class="topic"><a href="'.get_option('home').'/category/'.$cats[0]->slug.'">'.ucfirst($cats[0]->name).'</a></p>';
   }
 }

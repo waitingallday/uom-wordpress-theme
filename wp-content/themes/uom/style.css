@@ -26,3 +26,7 @@ Text Domain: kubrick
 .uomcontent .news-index .half .center a {
   display: inline-block;
 }
+
+.uomcontent article.news>figure {
+  margin-top: 0;
+}

@@ -26,4 +26,3 @@
 <body <?php body_class(); ?>>
   <div class="uomcontent">
     <div class="page-inner">
-      <div role="main">

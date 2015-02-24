@@ -1,28 +1,27 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Default_Theme
+ * @subpackage uom_theme
  */
 
 get_header(); ?>
 
-	<div id="content" class="narrowcolumn" role="main">
+<div class="floating"></div>
+<div role="main">
+  <header style="background-image:url(//uom-design-system.s3.amazonaws.com/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
 
 	<?php if (have_posts()) : ?>
+	<div class="news-index">
 
 		<?php while (have_posts()) : the_post(); ?>
-
-			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-				<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'kubrick'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h2>
-				<small><?php the_time(__('F jS, Y', 'kubrick')) ?> <!-- by <?php the_author() ?> --></small>
-
-				<div class="entry">
-					<?php the_content(__('Read the rest of this entry &raquo;', 'kubrick')); ?>
-				</div>
-
-				<p class="postmetadata"><?php the_tags(__('Tags:', 'kubrick') . ' ', ', ', '<br />'); ?> <?php printf(__('Posted in %s', 'kubrick'), get_the_category_list(', ')); ?> | <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'kubrick'), __('1 Comment &#187;', 'kubrick'), __('% Comments &#187;', 'kubrick'), '', __('Comments Closed', 'kubrick') ); ?></p>
-			</div>
-
+  <article id="post-<?php the_ID(); ?>">
+    <a href="<?php the_permalink() ?>">
+      <p class="topic"><?php get_the_category_list(', '); ?></p>
+      <h1><?php the_title(); ?></h1>
+      <p><?php the_content(__('Read the rest of this entry &raquo;', 'kubrick')); ?></p>
+    </a>
+    <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>
+  </article>
 		<?php endwhile; ?>
 
 		<div class="navigation">
@@ -32,14 +31,16 @@ get_header(); ?>
 
 	<?php else : ?>
 
-		<h2 class="center"><?php _e('Not Found', 'kubrick'); ?></h2>
-		<p class="center"><?php _e('Sorry, but you are looking for something that isn&#8217;t here.', 'kubrick'); ?></p>
+		<h2><?php _e('Not Found', 'kubrick'); ?></h2>
+		<p><?php _e('Sorry, but you are looking for something that isn&#8217;t here.', 'kubrick'); ?></p>
+
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>
 
 	</div>
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+</div>
 
 <?php get_footer(); ?>

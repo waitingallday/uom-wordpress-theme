@@ -4,9 +4,6 @@
  * @subpackage uom_theme
  */
 ?>
-
-
-      </div>
     </div>
   </div>
 

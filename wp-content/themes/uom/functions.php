@@ -16,3 +16,11 @@ function button_hero() {
 function button_hero_reverse() {
   return 'class="button-hero-reverse"';
 }
+
+function single_category_link() {
+  $cats = get_the_category();
+  if (count($cats) > 0) {
+    $cat = $cats[0];
+    return '<p class="topic"><a href="'.get_option('home').'/category/'.$cat['slug'].'">'.ucfirst($cats['name']).'</a></p>';
+  }
+}

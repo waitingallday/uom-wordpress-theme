@@ -22,3 +22,7 @@ Text Domain: kubrick
   display: block;
   padding-top: 30px;
 }
+
+.uomcontent .news-index .half .center a {
+  display: inline-block;
+}

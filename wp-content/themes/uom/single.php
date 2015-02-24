@@ -15,6 +15,10 @@ get_header();
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<article class="news" id="post-<?php the_ID(); ?>">
+		<figure>
+    	<img alt="" src="http://web.unimelb.edu.au/assets/components/news/assets/tsinghua_university_article-c41b725a850a46a090ee2c7cd2b5f9ec.jpg" />
+  	</figure>
+
 	  <div class="article">
 			<h1><?php the_title(); ?></h1>
 

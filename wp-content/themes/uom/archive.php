@@ -4,46 +4,22 @@
  * @subpackage uom_theme
  */
 
+$pagetitle = determine_archive_type();
 get_header();
 ?>
+
+<div class="page-local-history">
+  <a class="last" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
+	<span>/</span>
+  <a href="."><?php echo $pagetitle; ?></a>
+</div>
 
 <div role="main">
 
 	<?php if (have_posts()) : ?>
  	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 		<header>
-		  <h1>
-		 	  <?php
-			 	  /* If this is a category archive */
-			 	  if (is_category()) {
-						printf('Archive for the &#8216;%s&#8217; Category', single_cat_title('', false));
-
-			 	  /* If this is a tag archive */
-			 		} elseif( is_tag() ) {
-						printf('Posts Tagged &#8216;%s&#8217;', single_tag_title('', false));
-
-			 	  /* If this is a daily archive */
-			 		} elseif (is_day()) {
-						printf('Archive for %s|Daily archive page', get_the_time('F jS, Y'));
-
-			 	  /* If this is a monthly archive */
-			 		} elseif (is_month()) {
-						printf('Archive for %s|Monthly archive page', get_the_time('F, Y'));
-
-			 	  /* If this is a yearly archive */
-			 		} elseif (is_year()) {
-						printf('Archive for %s|Yearly archive page', get_the_time('Y'));
-
-				  /* If this is an author archive */
-					} elseif (is_author()) {
-					 _e('Author Archive', 'kubrick');
-
-			 	  /* If this is a paged archive */
-			 	  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-						_e('Blog Archives', 'kubrick');
-			 	  }
-			 	?>
- 	 		</h1>
+		  <h1><?php echo $pagetitle ?></h1>
 	 	</header>
 
 		<div class="news-index">
@@ -78,6 +54,7 @@ get_header();
 		} else {
 			echo("<h2 class='center'>".__('No posts found.', 'kubrick').'</h2>');
 		}
+
 	  get_search_form();
 
 	endif;

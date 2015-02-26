@@ -34,3 +34,38 @@ function render_categories_list() {
     echo '</ul>';
   }
 }
+
+function determine_archive_type() {
+  $pagetitle = '';
+
+  /* If this is a category archive */
+  if (is_category()) {
+    $pagetitle = 'Archive for the &#8216;%s&#8217; Category', single_cat_title('', false));
+
+  /* If this is a tag archive */
+  } elseif( is_tag() ) {
+    $pagetitle = 'Posts Tagged &#8216;%s&#8217;', single_tag_title('', false));
+
+  /* If this is a daily archive */
+  } elseif (is_day()) {
+    $pagetitle = 'Archive for %s|Daily archive page', get_the_time('F jS, Y'));
+
+  /* If this is a monthly archive */
+  } elseif (is_month()) {
+    $pagetitle = 'Archive for %s|Monthly archive page', get_the_time('F, Y'));
+
+  /* If this is a yearly archive */
+  } elseif (is_year()) {
+    $pagetitle = 'Archive for %s|Yearly archive page', get_the_time('Y'));
+
+  /* If this is an author archive */
+  } elseif (is_author()) {
+    $pagetitle = 'Author Archive';
+
+  /* If this is a paged archive */
+  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+    $pagetitle = 'Blog Archives';
+  }
+
+  return $pagetitle;
+}

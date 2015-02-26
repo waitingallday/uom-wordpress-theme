@@ -24,6 +24,13 @@ function single_category_link() {
   }
 }
 
+function render_pages_list() {
+  $pages = get_pages();
+  foreach ( (array) $pages as $page ) {
+    echo '<li><a href="'.get_option('home').$page->slug.'">'.$page->name.'</a></li>';
+  }
+}
+
 function render_categories_list() {
   $cats = get_categories();
   if (count($cats) > 0) {

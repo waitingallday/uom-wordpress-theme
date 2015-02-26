@@ -7,6 +7,7 @@
 <div id="sitemap" role="navigation" data-absolute-root="<?php echo get_option('home') ?>">
   <h2><?php bloginfo('name'); ?></h2>
   <ul>
+  	<?php render_pages_list(); ?>
 		<li>
 		  <a href="<?php echo get_option('home') ?>/categories">Categories</a>
 			<div class="inner">

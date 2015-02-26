@@ -50,8 +50,6 @@
 
 <div id="respond">
 
-<h3><?php comment_form_title( __('Leave a Reply', 'kubrick'), __('Leave a Reply for %s' , 'kubrick') ); ?></h3>
-
 <div id="cancel-comment-reply">
 	<small><?php cancel_comment_reply_link() ?></small>
 </div>
@@ -62,32 +60,44 @@
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
+<fieldset>
+	<legend>Leave a Reply</legend>
+
 <?php if ( is_user_logged_in() ) : ?>
 
-<p><?php printf(__('Logged in as <a href="%1$s">%2$s</a>.', 'kubrick'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account', 'kubrick'); ?>"><?php _e('Log out &raquo;', 'kubrick'); ?></a></p>
+	<div><?php printf(__('Logged in as <a href="%1$s">%2$s</a>.', 'kubrick'), get_option('siteurl') . '/wp-admin/profile.php', $user_identity); ?> <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="<?php _e('Log out of this account', 'kubrick'); ?>"><?php _e('Log out &raquo;', 'kubrick'); ?></a></div>
 
 <?php else : ?>
 
-<p><input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="author"><small><?php _e('Name', 'kubrick'); ?> <?php if ($req) _e("(required)", "kubrick"); ?></small></label></p>
+	<div>
+	  <label for="author">Name <?php if ($req) _e("(required)", "kubrick"); ?></label>
+	  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+  </div>
 
-<p><input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-<label for="email"><small><?php _e('Mail (will not be published)', 'kubrick'); ?> <?php if ($req) _e("(required)", "kubrick"); ?></small></label></p>
+	<div>
+		<label for="email"><?php Email (will not be published) <?php if ($req) _e("(required)", "kubrick"); ?></label>
+		<input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+	</div>
 
-<p><input type="text" name="url" id="url" value="<?php echo  esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
-<label for="url"><small><?php _e('Website', 'kubrick'); ?></small></label></p>
+	<div>
+		<label for="url">Website</label>
+		<input type="text" name="url" id="url" value="<?php echo  esc_attr($comment_author_url); ?>" size="22" tabindex="3" />
+	</div>
 
 <?php endif; ?>
 
-<!--<p><small><?php printf(__('<strong>XHTML:</strong> You can use these tags: <code>%s</code>', 'kubrick'), allowed_tags()); ?></small></p>-->
+	<div>
+		<textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea>
+	</div>
 
-<p><textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></p>
+	<div>
+		<input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+		<?php comment_id_fields(); ?>
+	</div>
 
-<p><input name="submit" type="submit" id="submit" tabindex="5" value="<?php _e('Submit Comment', 'kubrick'); ?>" />
-<?php comment_id_fields(); ?>
-</p>
 <?php do_action('comment_form', $post->ID); ?>
 
+	</fieldset>
 </form>
 
 <?php endif; // If registration required and not logged in ?>

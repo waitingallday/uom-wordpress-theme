@@ -7,52 +7,65 @@
 get_header();
 ?>
 
-	<div id="content" class="narrowcolumn" role="main">
+<div role="main">
 
-		<?php if (have_posts()) : ?>
-
+	<?php if (have_posts()) : ?>
  	  <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
- 	  <?php /* If this is a category archive */ if (is_category()) { ?>
-		<h2 class="pagetitle"><?php printf(__('Archive for the &#8216;%s&#8217; Category', 'kubrick'), single_cat_title('', false)); ?></h2>
- 	  <?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-		<h2 class="pagetitle"><?php printf(__('Posts Tagged &#8216;%s&#8217;', 'kubrick'), single_tag_title('', false) ); ?></h2>
- 	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-		<h2 class="pagetitle"><?php printf(_c('Archive for %s|Daily archive page', 'kubrick'), get_the_time(__('F jS, Y', 'kubrick'))); ?></h2>
- 	  <?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-		<h2 class="pagetitle"><?php printf(_c('Archive for %s|Monthly archive page', 'kubrick'), get_the_time(__('F, Y', 'kubrick'))); ?></h2>
- 	  <?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-		<h2 class="pagetitle"><?php printf(_c('Archive for %s|Yearly archive page', 'kubrick'), get_the_time(__('Y', 'kubrick'))); ?></h2>
-	  <?php /* If this is an author archive */ } elseif (is_author()) { ?>
-		<h2 class="pagetitle"><?php _e('Author Archive', 'kubrick'); ?></h2>
- 	  <?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<h2 class="pagetitle"><?php _e('Blog Archives', 'kubrick'); ?></h2>
- 	  <?php } ?>
+		<header>
+		  <h1>
+		 	  <?php
+			 	  /* If this is a category archive */
+			 	  if (is_category()) {
+						printf('Archive for the &#8216;%s&#8217; Category', single_cat_title('', false));
 
+			 	  /* If this is a tag archive */
+			 		} elseif( is_tag() ) {
+						printf('Posts Tagged &#8216;%s&#8217;', single_tag_title('', false));
 
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries', 'kubrick')); ?></div>
-			<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;', 'kubrick')); ?></div>
-		</div>
+			 	  /* If this is a daily archive */
+			 		} elseif (is_day()) {
+						printf('Archive for %s|Daily archive page', get_the_time('F jS, Y'));
 
+			 	  /* If this is a monthly archive */
+			 		} elseif (is_month()) {
+						printf('Archive for %s|Monthly archive page', get_the_time('F, Y'));
+
+			 	  /* If this is a yearly archive */
+			 		} elseif (is_year()) {
+						printf('Archive for %s|Yearly archive page', get_the_time('Y'));
+
+				  /* If this is an author archive */
+					} elseif (is_author()) {
+					 _e('Author Archive', 'kubrick');
+
+			 	  /* If this is a paged archive */
+			 	  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+						_e('Blog Archives', 'kubrick');
+			 	  }
+		 	  ?>
+ 	 		</h1>
+	 	</header>
+
+		<div class="news-index">
 		<?php while (have_posts()) : the_post(); ?>
-		<div <?php post_class(); ?>>
-				<h3 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s', 'kubrick'), the_title_attribute('echo=0')); ?>"><?php the_title(); ?></a></h3>
-				<small><?php the_time(__('l, F jS, Y', 'kubrick')) ?></small>
-
-				<div class="entry">
-					<?php the_content() ?>
-				</div>
-
-				<p class="postmetadata"><?php the_tags(__('Tags:', 'kubrick'), ', ', '<br />'); ?> <?php printf(__('Posted in %s', 'kubrick'), get_the_category_list(', ')); ?> | <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'kubrick'), __('1 Comment &#187;', 'kubrick'), __('% Comments &#187;', 'kubrick'), '', __('Comments Closed', 'kubrick') ); ?></p>
-
-			</div>
-
+		  <article id="post-<?php the_ID(); ?>">
+		  	<?php single_category_link(); ?>
+	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+	      <?php the_content('Read more'); ?>
+		    <?php edit_post_link('Edit', '', ' | '); ?>
+		  </article>
 		<?php endwhile; ?>
-
-		<div class="navigation">
-			<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries', 'kubrick')); ?></div>
-			<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;', 'kubrick')); ?></div>
 		</div>
+
+		<div class="half">
+		  <section class="center">
+		  	<?php previous_posts_link('Newer') ?>
+		  </section>
+		  <section class="center">
+		  	<?php next_posts_link('Older') ?>
+		  </section>
+		</div>
+
 	<?php else :
 
 		if ( is_category() ) { // If this is a category archive
@@ -66,8 +79,8 @@ get_header();
 			echo("<h2 class='center'>".__('No posts found.', 'kubrick').'</h2>');
 		}
 	  get_search_form();
-	endif;
-?>
-	</div>
+	endif; ?>
+
+</div>
 
 <?php get_footer(); ?>

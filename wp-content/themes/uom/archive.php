@@ -39,10 +39,10 @@ get_header();
 					 _e('Author Archive', 'kubrick');
 
 			 	  /* If this is a paged archive */
-			 	  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
+			 	  } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
 						_e('Blog Archives', 'kubrick');
 			 	  }
-		 	  ?>
+			 	?>
  	 		</h1>
 	 	</header>
 
@@ -79,7 +79,9 @@ get_header();
 			echo("<h2 class='center'>".__('No posts found.', 'kubrick').'</h2>');
 		}
 	  get_search_form();
-	endif; ?>
+
+	endif;
+?>
 
 </div>
 

@@ -24,11 +24,22 @@ function single_category_link() {
   }
 }
 
+function render_archives_list() {
+  $cats = get_categories();
+  if (count($cats) > 0) {
+    echo '<ul>';
+    foreach ( (array) $cats as $cat ) {
+      echo '<li><a href="'.get_option('home').'/category/'.$cat->slug.'">'.ucfirst($cat->name).' ('.$cat->count.')</a></li>';
+    }
+    echo '</ul>';
+  }
+}
+
 function render_pages_list() {
   $pages = get_pages();
   foreach ( (array) $pages as $page ) {
     if ("publish" === $page->post_status)
-      echo '<li><a href="'.get_option('home').$page->post_name.'">'.$page->post_title.'</a></li>';
+      echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a></li>';
   }
 }
 

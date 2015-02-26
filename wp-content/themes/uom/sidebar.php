@@ -15,8 +15,14 @@
 			</div>
 		</li>
 		<li>
-			<?php //get_search_form(); ?>
+			<span>Archives</span>
+			<div class="inner">
+        <?php wp_get_archives(); ?>
+			</div>
 		</li>
+		<!--li>
+			<?php //get_search_form(); ?>
+		</li-->
 		<li><?php wp_loginout(); ?></li>
 	</ul>
 </div>

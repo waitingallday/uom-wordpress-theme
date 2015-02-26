@@ -52,3 +52,9 @@ Text Domain: kubrick
   margin: -100px 0 30px;
   width: 100% !important;
 }
+
+.uomcontent .news-index article img:first-child {
+  float: none;
+  height: auto !important;
+  max-width: 100%;
+}

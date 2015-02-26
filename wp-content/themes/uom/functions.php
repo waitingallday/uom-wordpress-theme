@@ -26,11 +26,11 @@ function single_category_link() {
 
 function render_categories_list() {
   $cats = get_categories();
-  print_r($cats);
   if (count($cats) > 0) {
     echo '<ul>';
-    for ($i=0; $i<$count($cats); $i++)
-      echo '<li><a href="'.get_option('home').'/category/'.$cats[$i]->slug.'">'.ucfirst($cats[$i]->name).'</a></li>';
+    foreach ( (array) $cats as $cat ) {
+      echo '<li><a href="'.get_option('home').'/category/'.$cat->slug.'">'.ucfirst($cat->name).' ('.$cat->count.')</a></li>';
+    }
     echo '</ul>';
   }
 }

@@ -7,7 +7,7 @@
 <div id="sitemap" role="navigation">
   <ul>
 		<li>
-		  Categories
+		  <a href="">Categories</a>
 			<div class="inner">
 				<?php render_categories_list(); ?>
 			</div>

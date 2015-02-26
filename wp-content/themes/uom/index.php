@@ -23,17 +23,17 @@ get_header(); ?>
 		  <article id="post-<?php the_ID(); ?>">
 		  	<?php single_category_link(); ?>
 	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-	      <?php the_content(__('Read more', 'kubrick')); ?>
-		    <?php edit_post_link(__('Edit', 'kubrick'), '', ' | '); ?>
+	      <?php the_content('Read more'); ?>
+		    <?php edit_post_link('Edit', '', ' | '); ?>
 		  </article>
 		<?php endwhile; ?>
 
 		<div class="half">
 		  <section class="center">
-		  	<?php previous_posts_link(__('Newer', 'kubrick')) ?>
+		  	<?php previous_posts_link('Newer') ?>
 		  </section>
 		  <section class="center">
-		  	<?php next_posts_link(__('Older', 'kubrick')) ?>
+		  	<?php next_posts_link('Older') ?>
 		  </section>
 		</div>
 
@@ -48,7 +48,8 @@ get_header(); ?>
 		</div>
 	</section>
 
-	<?php //get_sidebar(); ?>
 </div>
+
+<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

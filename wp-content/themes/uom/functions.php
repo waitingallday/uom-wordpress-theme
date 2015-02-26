@@ -23,3 +23,13 @@ function single_category_link() {
     echo '<p class="topic"><a href="'.get_option('home').'/category/'.$cats[0]->slug.'">'.ucfirst($cats[0]->name).'</a></p>';
   }
 }
+
+function render_categories_list() {
+  $cats = get_categories();
+  if (count($cats) > 0) {
+    echo '<ul>';
+    for ($i=0; $i<$count($cats); $i++)
+      echo '<li><a href="'.get_option('home').'/category/'.$cats[$i]->slug.'">'.ucfirst($cats[$i]->name).'</a></li>';
+    echo '</ul>';
+  }
+}

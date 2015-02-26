@@ -6,21 +6,10 @@
 ?>
 <div id="sitemap" role="navigation">
   <ul>
-		<?php wp_list_pages(); ?>
-		<li>
-		  Archives
-			<div class="inner">
-				<ul>
-					<?php wp_get_archives('type=monthly'); ?>
-				</ul>
-			</div>
-		</li>
 		<li>
 		  Categories
 			<div class="inner">
-			  <ul>
-					<?php wp_list_categories('show_count=1'); ?>
-				</ul>
+				<?php render_categories_list(); ?>
 			</div>
 		</li>
 		<li>

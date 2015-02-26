@@ -27,10 +27,6 @@ Text Domain: kubrick
   display: inline-block;
 }
 
-.uomcontent article.news>figure {
-  margin-top: 0;
-}
-
 .uomcontent .page-header .page-local-history b {
   font-weight: 300;
 }
@@ -51,6 +47,6 @@ Text Domain: kubrick
   font-weight: 400;
 }
 
-.uomcontent [role="main"] section div.entry {
-  margin: 0;
+.uomcontent [role="main"] section.article img:first-child {
+  margin: -100px 0 30px;
 }

@@ -30,3 +30,7 @@ Text Domain: kubrick
 .uomcontent article.news>figure {
   margin-top: 0;
 }
+
+.uomcontent .page-header .page-local-history b {
+  font-weight: 300;
+}

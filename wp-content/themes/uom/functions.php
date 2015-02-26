@@ -40,7 +40,7 @@ function determine_archive_type() {
 
   /* If this is a category archive */
   if (is_category()) {
-    $pagetitle = 'Posted under <b>'.single_cat_title('', false).'</b>';
+    $pagetitle = 'Posted under <b>'.ucfirst(single_cat_title('', false)).'</b>';
 
   /* If this is a tag archive */
   } elseif( is_tag() ) {

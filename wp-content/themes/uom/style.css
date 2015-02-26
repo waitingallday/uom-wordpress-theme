@@ -34,3 +34,8 @@ Text Domain: kubrick
 .uomcontent .page-header .page-local-history b {
   font-weight: 300;
 }
+
+.uomcontent .postmetadata {
+  line-height: 1.4;
+  padding: 10px;
+}

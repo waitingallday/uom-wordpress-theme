@@ -48,5 +48,7 @@ Text Domain: kubrick
 }
 
 .uomcontent [role="main"] section.article img:first-child {
+  height: auto !important;
   margin: -100px 0 30px;
+  width: 100% !important;
 }

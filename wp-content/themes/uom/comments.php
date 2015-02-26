@@ -75,7 +75,7 @@
   </div>
 
 	<div>
-		<label for="email"><?php Email (will not be published) <?php if ($req) _e("(required)", "kubrick"); ?></label>
+		<label for="email">Email (will not be published) <?php if ($req) _e("(required)", "kubrick"); ?></label>
 		<input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 	</div>
 

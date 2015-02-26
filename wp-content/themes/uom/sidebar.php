@@ -17,7 +17,9 @@
 		<li>
 			<span>Archives</span>
 			<div class="inner">
-        <?php wp_get_archives(); ?>
+				<ul>
+        	<?php wp_get_archives(); ?>
+        </ul>
 			</div>
 		</li>
 		<!--li>

@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <div class="page-local-history">
-  <a class="last" href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
+  <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
 	<span>/</span>
   <a href="."><?php the_title(); ?></a>
 </div>

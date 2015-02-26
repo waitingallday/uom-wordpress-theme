@@ -22,25 +22,27 @@ get_header();
 		  <h1><?php echo $pagetitle ?></h1>
 	 	</header>
 
-		<div class="news-index">
-		<?php while (have_posts()) : the_post(); ?>
-		  <article id="post-<?php the_ID(); ?>">
-		  	<?php single_category_link(); ?>
-	      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-	      <?php the_content('Read more'); ?>
-		    <?php edit_post_link('Edit', '', ' | '); ?>
-		  </article>
-		<?php endwhile; ?>
-		</div>
+	 	<section>
+			<div class="news-index">
+			<?php while (have_posts()) : the_post(); ?>
+			  <article id="post-<?php the_ID(); ?>">
+			  	<?php single_category_link(); ?>
+		      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
+		      <?php the_content('Read more'); ?>
+			    <?php edit_post_link('Edit', '', ' | '); ?>
+			  </article>
+			<?php endwhile; ?>
+			</div>
 
-		<div class="half">
-		  <section class="center">
-		  	<?php previous_posts_link('Newer') ?>
-		  </section>
-		  <section class="center">
-		  	<?php next_posts_link('Older') ?>
-		  </section>
-		</div>
+			<div class="half">
+			  <section class="center">
+			  	<?php previous_posts_link('Newer') ?>
+			  </section>
+			  <section class="center">
+			  	<?php next_posts_link('Older') ?>
+			  </section>
+			</div>
+		</section>
 
 	<?php else :
 

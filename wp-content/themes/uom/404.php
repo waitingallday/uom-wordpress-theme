@@ -16,7 +16,7 @@ get_header();
   </section>
   <section>
     <figure class="full-width">
-      <img alt="Ursa Major, Ursa Minor, Barry can find lots of constellations, but not the site you’re looking for. Sorry!" src="/resources/404.jpg" />
+      <img alt="Ursa Major, Ursa Minor, Barry can find lots of constellations, but not the site you’re looking for. Sorry!" src="<?php echo get_template_directory_uri(); ?>/images/404.jpg" />
       <figcaption>Ursa Major, Ursa Minor, Barry can find lots of constellations, but not the site you’re looking for. Sorry!</figcaption>
     </figure>
   </section>

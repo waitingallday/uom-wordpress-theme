@@ -26,6 +26,7 @@ function single_category_link() {
 
 function render_pages_list() {
   $pages = get_pages();
+  print_r($pages);
   foreach ( (array) $pages as $page ) {
     echo '<li><a href="'.get_option('home').$page->slug.'">'.$page->name.'</a></li>';
   }

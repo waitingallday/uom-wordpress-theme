@@ -71,3 +71,29 @@ Text Domain: kubrick
   text-align: center;
   text-transform: uppercase;
 }
+
+.uomcontent .commentlist {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.uomcontent .comment .comment-author {
+  color: #666;
+  padding: 15px 0;
+}
+
+.uomcontent .comment .comment-author img {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.uomcontent .comment .comment-meta {
+  float: right;
+  padding-right: 15px;
+}
+
+.uomcontent .comment .comment-meta a {
+  color: #aaa;
+  font-size: .8em;
+}
+

@@ -24,8 +24,6 @@ get_header(); ?>
 
 	<?php endwhile; endif; ?>
 	<?php edit_post_link('Edit'); ?>
-
-	<?php comments_template(); ?>
 </div>
 
 <?php get_footer(); ?>

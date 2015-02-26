@@ -58,7 +58,7 @@
 <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'kubrick'), wp_login_url( get_permalink() )); ?></p>
 <?php else : ?>
 
-<form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+<form data-validate action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
 <fieldset>
 	<legend>Leave a Reply</legend>
@@ -70,13 +70,13 @@
 <?php else : ?>
 
 	<div>
-	  <label for="author">Name <?php if ($req) _e("(required)", "kubrick"); ?></label>
-	  <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+	  <label for="author" data-required="true">Name</label>
+	  <input type="text" aria-required="true" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
   </div>
 
 	<div>
-		<label for="email">Email (will not be published) <?php if ($req) _e("(required)", "kubrick"); ?></label>
-		<input type="text" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+		<label for="email" data-required="true">Email (will not be published)</label>
+		<input type="text" aria-required="true" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
 	</div>
 
 	<div>

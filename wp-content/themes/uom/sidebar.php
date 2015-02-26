@@ -15,7 +15,7 @@
 			</div>
 		</li>
 		<li>
-			<span>Archives</span>
+			<a href="/">Archives</a>
 			<div class="inner">
 				<ul>
         	<?php wp_get_archives(); ?>

@@ -4,10 +4,11 @@
  * @subpackage uom_theme
  */
 ?>
-<div id="sitemap" role="navigation">
+<div id="sitemap" role="navigation" data-absolute-root="<?php echo get_option('home') ?>">
+  <h2><?php bloginfo('name'); ?></h2>
   <ul>
 		<li>
-		  <a href="">Categories</a>
+		  <a href="<?php echo get_option('home') ?>/categories">Categories</a>
 			<div class="inner">
 				<?php render_categories_list(); ?>
 			</div>

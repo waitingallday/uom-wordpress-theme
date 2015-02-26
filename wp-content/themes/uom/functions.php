@@ -26,6 +26,7 @@ function single_category_link() {
 
 function render_categories_list() {
   $cats = get_categories();
+  print_r($cats);
   if (count($cats) > 0) {
     echo '<ul>';
     for ($i=0; $i<$count($cats); $i++)

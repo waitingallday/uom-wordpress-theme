@@ -29,7 +29,7 @@ get_header();
 			  	<?php single_category_link(); ?>
 		      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 		      <?php the_content('Read more'); ?>
-			    <?php edit_post_link('Edit', '', ' | '); ?>
+			    <?php edit_post_link('Edit'); ?>
 			  </article>
 			<?php endwhile; ?>
 			</div>

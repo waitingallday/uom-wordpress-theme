@@ -39,3 +39,18 @@ Text Domain: kubrick
   line-height: 1.4;
   padding: 10px;
 }
+
+.uomcontent .entry span[id^="more"] {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  display: block;
+  margin-top: 15px;
+  padding-top: 45px;
+}
+
+.uomcontent [role="main"] header h1 b {
+  font-weight: 400;
+}
+
+.uomcontent [role="main"] section div.entry {
+  margin: 0;
+}

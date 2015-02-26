@@ -14,7 +14,7 @@
 			</div>
 		</li>
 		<li>
-			<?php get_search_form(); ?>
+			<?php //get_search_form(); ?>
 		</li>
 		<li><?php wp_loginout(); ?></li>
 	</ul>

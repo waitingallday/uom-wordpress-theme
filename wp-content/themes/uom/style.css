@@ -36,6 +36,10 @@ Text Domain: kubrick
   padding: 10px;
 }
 
+.uomcontent .entry {
+  padding-top: 60px;
+}
+
 .uomcontent .entry span[id^="more"] {
   border-top: 1px solid rgba(0, 0, 0, .1);
   display: block;

@@ -19,19 +19,13 @@ if (count($banner) > 0)
 <div role="main">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<article id="post-<?php the_ID(); ?>"<?php echo $banner ?>>
+	<article id="post-<?php the_ID(); ?>">
 	<?php if (count($banner) > 0): ?>
-		<header>
-			<div class="bottom-align">
-				<h1><?php the_title(); ?></h1>
-			</div>
-		</header>
-
-		<div class="entry">
-	<?php else: ?>
+		<header<?php echo $banner ?>></header>
+	<?php endif; ?>
 		<div class="entry">
 			<h1><?php the_title(); ?></h1>
-	<?php endif; ?>
+
 			<?php the_content(); ?>
 
 			<p class="postmetadata alt">

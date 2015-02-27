@@ -61,7 +61,7 @@ Text Domain: kubrick
   background: #F2F5F8;
   clear: both;
   font-weight: 400;
-  padding: 15px;
+  padding: 30px;
 }
 
 .uomcontent form {
@@ -80,7 +80,12 @@ Text Domain: kubrick
 .uomcontent article.news .commentlist {
   background: #F2F5F8;
   list-style-type: none;
-  padding-left: 15px;
+  padding: 0 30px 15px;
+}
+
+.uomcontent article.news .commentlist li {
+  border-top: 1px solid rgba(0, 0, 0, .05);
+  margin: 0;
 }
 
 .uomcontent .comment .comment-author {
@@ -98,7 +103,8 @@ Text Domain: kubrick
   padding-right: 15px;
 }
 
-.uomcontent .comment .comment-meta a {
+.uomcontent .comment .comment-meta a,
+.uomcontent .comment .reply a {
   color: #aaa;
   font-size: .8em;
 }

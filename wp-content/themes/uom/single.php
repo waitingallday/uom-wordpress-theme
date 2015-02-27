@@ -20,6 +20,7 @@ if (count($banner) > 0)
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>"<?php echo $banner ?>>
+	<?php if (count($banner) > 0): ?>
 		<header>
 			<div class="bottom-align">
 				<h1><?php the_title(); ?></h1>
@@ -27,6 +28,10 @@ if (count($banner) > 0)
 		</header>
 
 		<div class="entry">
+	<?php else: ?>
+		<div class="entry">
+			<h1><?php the_title(); ?></h1>
+	<?php endif; ?>
 			<?php the_content(); ?>
 
 			<p class="postmetadata alt">

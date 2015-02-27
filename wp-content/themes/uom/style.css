@@ -99,8 +99,7 @@ Text Domain: kubrick
 }
 
 .uomcontent .comment .comment-meta {
-  float: right;
-  padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 .uomcontent .comment .comment-meta a,

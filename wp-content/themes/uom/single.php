@@ -26,9 +26,7 @@ if (count($banner) > 0)
 	<?php endif; ?>
 		<div class="entry article">
 			<h1><?php the_title(); ?></h1>
-
 			<?php the_content(); ?>
-
       <?php edit_post_link('Edit'); ?>
 		</div>
 
@@ -43,8 +41,6 @@ if (count($banner) > 0)
 	      <?php echo get_the_category_list(); ?>
 	    </div>
 		</aside>
-
-		<footer></footer>
 	</article>
 
 	<?php comments_template(); ?>

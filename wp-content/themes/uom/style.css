@@ -36,8 +36,12 @@ Text Domain: kubrick
   padding: 10px;
 }
 
-.uomcontent .noheader {
+.uomcontent [role="main"] article.noheader {
   padding-top: 100px;
+}
+
+.uomcontent article.news .entry {
+  padding-bottom: 30px;
 }
 
 .uomcontent .entry span[id^="more"] {
@@ -57,6 +61,12 @@ Text Domain: kubrick
   max-width: 100%;
 }
 
+.uomcontent h3#comments {
+  background: #F2F5F8;
+  clear: both;
+  padding: 20px;
+}
+
 .uomcontent form {
   border-top: 1px solid rgba(0, 0, 0, .1);
 }
@@ -71,6 +81,7 @@ Text Domain: kubrick
 }
 
 .uomcontent .commentlist {
+  background: #F2F5F8;
   list-style-type: none;
   padding-left: 0;
 }

@@ -5,6 +5,9 @@
  */
 
 get_header();
+$banner = get_post_meta(get_the_ID(), 'banner');
+if ($banner)
+	$banner = ' style="background-image:url('.$banner.')"';
 ?>
 
 <div class="page-local-history">
@@ -16,8 +19,12 @@ get_header();
 <div role="main">
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<section class="article" id="post-<?php the_ID(); ?>">
-		<h1><?php the_title(); ?></h1>
+	<article id="post-<?php the_ID(); ?>"<?php echo $banner ?>>
+		<header>
+			<div class="mid-align">
+				<h1><?php the_title(); ?></h1>
+			</div>
+		</header>
 
 		<div class="entry">
 			<?php the_content(); ?>
@@ -52,7 +59,7 @@ get_header();
 			</p>
 
 		</div>
-	</section>
+	</article>
 
 	<?php comments_template(); ?>
 

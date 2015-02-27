@@ -80,7 +80,6 @@ Text Domain: kubrick
 .uomcontent article.news .commentlist {
   background: #F2F5F8;
   list-style-type: none;
-  margin-left: 0;
   padding-left: 15px;
 }
 

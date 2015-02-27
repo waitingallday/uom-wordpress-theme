@@ -28,7 +28,6 @@ if (count($banner) > 0)
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
       <?php edit_post_link('Edit'); ?>
-			<?php comments_template(); ?>
 		</div>
 
 		<aside>
@@ -44,6 +43,8 @@ if (count($banner) > 0)
 		</aside>
 
 		<footer></footer>
+
+		<?php comments_template(); ?>
 	</article>
 
 <?php endwhile; else: ?>

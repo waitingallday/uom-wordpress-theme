@@ -40,11 +40,7 @@ if (count($banner) > 0)
 	      <p>
 	        <em>Categories</em>
 	      </p>
-	      <ul>
-	        <li>
-	          <a href="#">Sustainability</a>
-	        </li>
-	      </ul>
+	      <?php echo get_the_category_list(); ?>
 	    </div>
 		</aside>
 

@@ -6,10 +6,8 @@
 
 get_header();
 $banner = get_post_meta(get_the_ID(), 'banner');
-print_r($banner);
-
-if ($banner)
-	$banner = ' style="background-image:url('.$banner.')"';
+if (count($banner) > 0)
+	$banner = ' style="background-image:url('.$banner[0].')"';
 ?>
 
 <div class="page-local-history">

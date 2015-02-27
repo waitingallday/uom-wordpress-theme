@@ -77,7 +77,7 @@ Text Domain: kubrick
   text-transform: uppercase;
 }
 
-.uomcontent .commentlist {
+.uomcontent article.news .commentlist {
   background: #F2F5F8;
   list-style-type: none;
   margin-left: 0;

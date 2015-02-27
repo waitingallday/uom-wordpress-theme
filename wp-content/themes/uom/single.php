@@ -42,6 +42,8 @@ if (count($banner) > 0)
 	      <?php echo get_the_category_list(); ?>
 	    </div>
 		</aside>
+
+		<footer></footer>
 	</article>
 
 <?php endwhile; else: ?>

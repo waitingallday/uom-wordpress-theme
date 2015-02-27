@@ -28,6 +28,7 @@ if (count($banner) > 0)
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
       <?php edit_post_link('Edit'); ?>
+			<?php comments_template(); ?>
 		</div>
 
 		<aside>
@@ -43,14 +44,9 @@ if (count($banner) > 0)
 		</aside>
 	</article>
 
-	<?php comments_template(); ?>
-
-	<?php endwhile; else: ?>
-
+<?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'kubrick'); ?></p>
-
 <?php endif; ?>
-
 </div>
 
 <?php get_footer(); ?>

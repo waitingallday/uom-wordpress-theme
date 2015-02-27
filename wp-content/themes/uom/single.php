@@ -17,13 +17,12 @@ if (count($banner) > 0)
 </div>
 
 <div role="main">
-
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-	<article id="post-<?php the_ID(); ?>">
 	<?php if (count($banner) > 0): ?>
-		<header<?php echo $banner ?>></header>
+	<header class="banner"<?php echo $banner ?>></header>
 	<?php endif; ?>
-		<div class="entry">
+	<article class="news" id="post-<?php the_ID(); ?>">
+		<div class="entry article">
 			<h1><?php the_title(); ?></h1>
 
 			<?php the_content(); ?>
@@ -58,6 +57,30 @@ if (count($banner) > 0)
 			</p>
 
 		</div>
+
+		<aside>
+      <div>
+        <time datetime="2014-09-22">22 September 2014</time>
+      </div>
+      <div>
+	      <p>
+	        <em>Categories</em>
+	      </p>
+	      <ul>
+	        <li>
+	          <a href="#">Sustainability</a>
+	        </li>
+	        <li>
+	          <a href="#">Tim Flannery</a>
+	        </li>
+	        <li>
+	          <a href="#">Melbourne Sustainable Society Institute</a>
+	        </li>
+	      </ul>
+	    </div>
+		</aside>
+
+		<footer></footer>
 	</article>
 
 	<?php comments_template(); ?>

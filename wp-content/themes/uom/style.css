@@ -36,10 +36,6 @@ Text Domain: kubrick
   padding: 10px;
 }
 
-.uomcontent .entry {
-  padding-top: 60px;
-}
-
 .uomcontent .entry span[id^="more"] {
   border-top: 1px solid rgba(0, 0, 0, .1);
   display: block;
@@ -50,12 +46,6 @@ Text Domain: kubrick
 .uomcontent [role="main"] header h1 b {
   font-weight: 400;
 }
-
-/*.uomcontent [role="main"] section.article img:first-child {
-  height: auto !important;
-  margin: -100px 0 30px;
-  width: 100% !important;
-}*/
 
 .uomcontent .news-index article img:first-child {
   float: none;

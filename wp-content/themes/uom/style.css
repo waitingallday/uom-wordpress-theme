@@ -40,6 +40,14 @@ Text Domain: kubrick
   padding-top: 100px;
 }
 
+.uomcontent .entry {
+  padding-bottom: 60px;
+}
+
+.uomcontent .entry.article {
+  padding-bottom: 0;
+}
+
 .uomcontent .entry span[id^="more"] {
   border-top: 1px solid rgba(0, 0, 0, .1);
   display: block;
@@ -99,7 +107,7 @@ Text Domain: kubrick
 }
 
 .uomcontent .comment .comment-meta {
-  padding-bottom: 30px;
+  padding-bottom: 30popx;
 }
 
 .uomcontent .comment .comment-meta a,

@@ -43,7 +43,14 @@ get_header(); ?>
 
 		<h1>No posts found. Try a different search?</h1>
 
-		<?php get_search_form(); ?>
+	  <form action="" class="search" method="get">
+	    <fieldset>
+	      <div class="inline">
+	        <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="s" placeholder="Search" type="search" />
+	        <button class="search-button" type="submit" value="Go"><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
+	      </div>
+	    </fieldset>
+	  </form>
 
 	<?php endif; ?>
 </div>

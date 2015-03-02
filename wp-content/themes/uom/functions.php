@@ -50,6 +50,7 @@ function render_pages_list() {
 
       if ($c > 0) {
         echo '<div class="inner"><ul>';
+        echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a>';
         foreach ( (array) $pages as $p )
           if ($page->ID === $p->post_parent && "publish" === $p->post_status)
             echo '<li><a href="'.get_option('home').'/'.$p->post_name.'">'.$p->post_title.'</a></li>';

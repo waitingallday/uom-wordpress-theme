@@ -69,7 +69,9 @@ Text Domain: kubrick
   background: #F2F5F8;
   clear: both;
   font-weight: 400;
+  margin: 0 auto;
   padding: 30px;
+  width: 100%;
 }
 
 .uomcontent form {

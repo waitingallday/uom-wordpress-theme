@@ -4,7 +4,7 @@
  * @subpackage uom_theme
  */
 
-$pagetitle = 'Search Results for ' + get_search_query();
+$pagetitle = printf('Search Results for: %s', get_search_query();
 get_header(); ?>
 
 <div class="page-local-history">

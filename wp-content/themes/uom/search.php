@@ -4,18 +4,19 @@
  * @subpackage uom_theme
  */
 
+$pagetitle = 'Search Results for ' + get_search_query();
 get_header(); ?>
 
 <div class="page-local-history">
   <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
 	<span>/</span>
-  <a href=".">Search</a>
+  <a href="."><?php echo $pagetitle; ?></a>
 </div>
 
 <div role="main">
 	<?php if (have_posts()) : ?>
 		<header>
-		  <h1>Search Results</h1>
+		  <h1><?php echo $pagetitle; ?></h1>
 	 	</header>
 
 	 	<section>
@@ -24,8 +25,6 @@ get_header(); ?>
 			  <article id="post-<?php the_ID(); ?>">
 			  	<?php single_category_link(); ?>
 		      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
-		      <?php the_content('Read more'); ?>
-			    <?php edit_post_link('Edit'); ?>
 			  </article>
 			<?php endwhile; ?>
 			</div>

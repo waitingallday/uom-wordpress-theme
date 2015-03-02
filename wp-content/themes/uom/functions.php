@@ -37,17 +37,28 @@ function render_archives_list() {
 
 function render_pages_list() {
   $pages = get_pages();
-  $root = [];
-  foreach ( (array) $pages as $page ) {
-    if (0 === $page->post_parent)
-      $root[] = $page;
-  }
-  print_r($root);
 
-  foreach ( (array) $pages as $page ) {
-    if ("publish" === $page->post_status)
-      echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a></li>';
-  }
+  // Single level parent-child
+  foreach ( (array) $pages as $page )
+    if (0 === $page->post_parent && "publish" === $page->post_status) {
+      echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a>';
+
+      $c = 0;
+      foreach ( (array) $pages as $p )
+        if ($page->ID === $p->post_parent && "publish" === $p->post_status)
+          $c++;
+
+      if ($c > 0) {
+        echo '<div class="inner"><ul>'
+        foreach ( (array) $pages as $p )
+          if ($page->ID === $p->post_parent && "publish" === $p->post_status)
+            echo '<li><a href="'.get_option('home').'/'.$p->post_name.'">'.$p->post_title.'</a></li>';
+        echo '</ul></div>';
+
+      }
+
+      echo '</li>';
+    }
 }
 
 function render_categories_list() {

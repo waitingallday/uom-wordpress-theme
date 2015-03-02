@@ -37,8 +37,14 @@ function render_archives_list() {
 
 function render_pages_list() {
   $pages = get_pages();
+  $root = [];
   foreach ( (array) $pages as $page ) {
-    print_r($pages);
+    if (0 === $page->post_parent)
+      $root[] = $page;
+  }
+  print_r($root);
+
+  foreach ( (array) $pages as $page ) {
     if ("publish" === $page->post_status)
       echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a></li>';
   }

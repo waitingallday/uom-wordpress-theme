@@ -91,14 +91,14 @@ Text Domain: kubrick
   text-transform: uppercase;
 }
 
-.uomcontent article.news .commentlist {
+.uomcontent article.news ol.commentlist {
   background: #F2F5F8;
   list-style-type: none;
   margin-left: 0;
   padding: 0 30px 15px;
 }
 
-.uomcontent article.news .commentlist li {
+.uomcontent article.news ol.commentlist li {
   border-top: 1px solid rgba(0, 0, 0, .05);
   margin: 0;
 }

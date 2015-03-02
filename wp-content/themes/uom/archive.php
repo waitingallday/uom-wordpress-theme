@@ -5,8 +5,7 @@
  */
 
 $pagetitle = determine_archive_type();
-get_header();
-?>
+get_header(); ?>
 
 <div class="page-local-history">
   <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>

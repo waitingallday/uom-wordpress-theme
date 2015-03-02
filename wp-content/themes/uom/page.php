@@ -4,11 +4,8 @@
  * @subpackage uom_theme
  */
 
-get_header();
-$banner = get_post_meta(get_the_ID(), 'banner');
-if (count($banner) > 0)
-	$banner = ' style="background-image:url('.$banner[0].')"';
-?>
+$banner = get_banner();
+get_header(); ?>
 
 <div class="page-local-history">
   <a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>

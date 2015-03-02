@@ -6,9 +6,8 @@
 /*
 Template Name: Archives
 */
-?>
 
-<?php get_header(); ?>
+get_header(); ?>
 
 <div id="content" class="widecolumn">
 

@@ -17,6 +17,14 @@ function button_hero_reverse() {
   return 'class="button-hero-reverse"';
 }
 
+function get_banner() {
+  $banner = post_meta(get_the_ID(), 'banner');
+  if (count($banner) > 0)
+    $banner = ' style="background-image:url('.$banner[0].')"';
+
+  return $banner;
+}
+
 function single_category_link() {
   $cats = get_the_category();
   if (count($cats) > 0) {

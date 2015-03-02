@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="floating"></div>
 <div role="main">
-  <header class="banner" style="background-image:url(http://web.unimelb.edu.au/assets/images/stars.jpg)">
+  <header class="banner" style="background-image:url(<?php header_image(); ?>)">
   	<div class="mid-align">
 	    <h1><?php bloginfo('name'); ?></h1>
   	  <p><?php bloginfo('description'); ?></p>

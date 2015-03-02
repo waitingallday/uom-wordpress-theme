@@ -4,6 +4,11 @@
  * @subpackage uom_theme
  */
 
+/**
+ * Add support for a custom header image.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
 add_theme_support( 'automatic-feed-links' );
 
 add_filter('next_posts_link_attributes', 'button_hero');

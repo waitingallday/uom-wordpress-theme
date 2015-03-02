@@ -48,6 +48,10 @@ Text Domain: kubrick
   padding-bottom: 0;
 }
 
+.uomcontent .post {
+  padding-top: 60px;
+}
+
 .uomcontent .entry span[id^="more"] {
   border-top: 1px solid rgba(0, 0, 0, .1);
   display: block;

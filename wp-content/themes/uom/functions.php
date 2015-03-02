@@ -38,7 +38,7 @@ function render_archives_list() {
 function render_pages_list() {
   $pages = get_pages();
 
-  // Single level parent-child
+  // 2 level parent-child menu
   foreach ( (array) $pages as $page )
     if (0 === $page->post_parent && "publish" === $page->post_status) {
       echo '<li><a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a>';

@@ -73,7 +73,7 @@ Text Domain: kubrick
   background: #F2F5F8;
   clear: both;
   font-weight: 400;
-  margin: 0 auto;
+  margin: 0 auto 0 0;
   padding: 30px;
   width: 100%;
 }
@@ -94,6 +94,7 @@ Text Domain: kubrick
 .uomcontent article.news .commentlist {
   background: #F2F5F8;
   list-style-type: none;
+  margin-left: 0;
   padding: 0 30px 15px;
 }
 
@@ -122,3 +123,7 @@ Text Domain: kubrick
   font-size: .8em;
 }
 
+.uomcontent #respond {
+  margin-left: 0;
+  max-width: 700px;
+}

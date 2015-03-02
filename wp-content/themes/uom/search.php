@@ -4,7 +4,7 @@
  * @subpackage uom_theme
  */
 
-$pagetitle = sprintf('Search Results for: %s', get_search_query());
+$pagetitle = sprintf('Search Results for <b>%s</b>', get_search_query());
 get_header(); ?>
 
 <div class="page-local-history">
@@ -20,7 +20,7 @@ get_header(); ?>
 	 	</header>
 
 	 	<section>
-			<div class="news-index">
+			<div class="news-index short">
 			<?php while (have_posts()) : the_post(); ?>
 			  <article id="post-<?php the_ID(); ?>">
 			  	<?php single_category_link(); ?>

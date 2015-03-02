@@ -18,6 +18,11 @@ Text Domain: kubrick
   display: inline;
 }
 
+.uomcontent .news-index.short article {
+  padding-bottom: 0;
+  padding-top: 15px;
+}
+
 .uomcontent .news-index p a.more-link {
   display: block;
   padding-top: 30px;

@@ -132,3 +132,12 @@ Text Domain: kubrick
   margin-left: 0;
   max-width: 700px;
 }
+
+.uomcontent #sitemap form.search {
+  margin: 5px 0 10px 15px;
+  max-width: 270px;
+}
+
+.uomcontent #sitemap fieldset .inline .search-button {
+  margin-top: 5px;
+}

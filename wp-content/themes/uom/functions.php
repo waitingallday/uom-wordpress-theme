@@ -7,9 +7,19 @@
 /**
  * Add support for a custom header image.
  */
-require get_template_directory() . '/inc/custom-header.php';
+function custom_header_setup() {
+  $defaults = array(
+    'default-image'          => '%s/images/headers/stars.jpg',
+    'height'                 => 1500,
+    'width'                  => 2000,
+    'uploads'                => true
+  );
+  add_theme_support('custom-header', $defaults);
+}
 
-add_theme_support( 'automatic-feed-links' );
+add_action('after_setup_theme', 'custom_header_setup');
+
+add_theme_support('automatic-feed-links');
 
 add_filter('next_posts_link_attributes', 'button_hero');
 add_filter('previous_posts_link_attributes', 'button_hero_reverse');

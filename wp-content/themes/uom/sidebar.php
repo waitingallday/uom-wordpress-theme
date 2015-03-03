@@ -23,7 +23,7 @@
 			</div>
 		</li>
 		<li>
-		  <form action="" class="search" method="get">
+		  <form action="<?php echo get_option('home') ?>/" class="search" method="get">
 		    <fieldset>
 		      <div class="inline">
 		        <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="s" placeholder="Search" type="search" />

@@ -141,3 +141,9 @@ Text Domain: kubrick
 .uomcontent #sitemap fieldset .inline .search-button {
   margin-top: 5px;
 }
+
+/* Admin bar override */
+body.admin-bar .uomcontent .page-header {
+  top: 32px;
+}
+

@@ -33,7 +33,7 @@ function button_hero_reverse() {
 }
 
 function get_banner() {
-  $banner = post_meta(get_the_ID(), 'banner');
+  $banner = get_post_meta(get_the_ID(), 'banner');
   if (count($banner) > 0)
     $banner = ' style="background-image:url('.$banner[0].')"';
 

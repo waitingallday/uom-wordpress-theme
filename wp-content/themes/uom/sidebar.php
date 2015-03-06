@@ -15,7 +15,9 @@
     <li>
       <a href="/">Archives</a>
       <div class="inner">
-        <ul>'.wp_get_archives().'</ul>
+        <ul>';
+        wp_get_archives();
+        echo '</ul>
       </div>
     </li>
 ';

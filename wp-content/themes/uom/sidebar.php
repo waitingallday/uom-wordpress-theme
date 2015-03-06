@@ -14,7 +14,8 @@
   			echo '
     <li>
       <a href="/">Archives</a>
-      <div class="inner">'.wp_get_archives().'
+      <div class="inner">
+        <ul>'.wp_get_archives().'</ul>
       </div>
     </li>
 ';

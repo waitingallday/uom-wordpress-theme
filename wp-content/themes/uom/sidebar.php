@@ -10,7 +10,7 @@
   	<?php
   		render_pages_list();
   		render_categories_list();
-  		if (count_categories() > 0): ?>
+  		if (count_active_categories() > 0): ?>
     <li>
       <a href="/">Archives</a>
       <div class="inner">

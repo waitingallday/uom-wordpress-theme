@@ -17,7 +17,7 @@
 				<?php wp_get_archives(); ?>
       </div>
     </li>
-    <?php end; ?>
+    <?php endif; ?>
 		<li>
 		  <form action="<?php echo get_option('home') ?>/" class="search" method="get">
 		    <fieldset>

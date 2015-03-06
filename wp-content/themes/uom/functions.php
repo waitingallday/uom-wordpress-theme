@@ -63,7 +63,7 @@ function get_page_template_type($post_id = null) {
 }
 
 function render_pages_list() {
-  $pages = get_pages();
+  $pages = get_pages(array('sort_column' => 'menu_order'));
 
   // 2 level parent-child menu, do not show pages with homepage template
   foreach ( (array) $pages as $page )

@@ -8,6 +8,7 @@
   <h2><?php bloginfo('name'); ?></h2>
   <ul>
   	<?php render_pages_list(); ?>
+  	<?php if (wp_count_posts() > 0): ?>
 		<li>
 		  <a href="<?php echo get_option('home') ?>/categories">Categories</a>
 			<div class="inner">
@@ -22,6 +23,7 @@
         </ul>
 			</div>
 		</li>
+		<?php endif; ?>
 		<li>
 		  <form action="<?php echo get_option('home') ?>/" class="search" method="get">
 		    <fieldset>

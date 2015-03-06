@@ -58,13 +58,23 @@ function render_archives_list() {
   }
 }
 
+function get_page_template_type($post_id = null) {
+  $post = get_post( $post_id );
+  if ( 'page' != $post->post_type )
+    return false;
+  $template = get_post_meta( $post->ID, '_wp_page_template', true );
+    if ( ! $template || 'default' == $template )
+      return '';
+  return $template;
+}
+
 function render_pages_list() {
   $pages = get_pages();
 
   // 2 level parent-child menu
   foreach ( (array) $pages as $page )
     if (0 === $page->post_parent && "publish" === $page->post_status) {
-      echo '<li>'.get_page_template($page->ID).'<a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a>';
+      echo '<li>'.get_page_template_type($page->ID).'<a href="'.get_option('home').'/'.$page->post_name.'">'.$page->post_title.'</a>';
 
       $c = 0;
       foreach ( (array) $pages as $p )

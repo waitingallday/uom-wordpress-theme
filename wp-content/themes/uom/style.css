@@ -143,7 +143,9 @@ Text Domain: kubrick
 }
 
 /* Admin bar override */
-body.admin-bar .uomcontent .page-header {
+body.admin-bar .uomcontent .page-header,
+body.admin-bar .uomcontent [role="navigation"],
+body.admin-bar .uomcontent .sitemap-label,
+body.admin-bar .uomcontent [role="sitemap"] {
   top: 32px;
 }
-

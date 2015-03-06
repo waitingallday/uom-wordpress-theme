@@ -7,23 +7,11 @@
 <div id="sitemap" role="navigation" data-absolute-root="<?php echo get_option('home') ?>">
   <h2><?php bloginfo('name'); ?></h2>
   <ul>
-  	<?php render_pages_list(); ?>
-  	<?php if (wp_count_posts() > 0): ?>
-		<li>
-		  <a href="<?php echo get_option('home') ?>/categories">Categories</a>
-			<div class="inner">
-				<?php render_categories_list(); ?>
-			</div>
-		</li>
-		<li>
-			<a href="/">Archives</a>
-			<div class="inner">
-				<ul>
-        	<?php wp_get_archives(); ?>
-        </ul>
-			</div>
-		</li>
-		<?php endif; ?>
+  	<?php
+  		render_pages_list();
+  		render_categories_list();
+    	wp_get_archives();
+		?>
 		<li>
 		  <form action="<?php echo get_option('home') ?>/" class="search" method="get">
 		    <fieldset>

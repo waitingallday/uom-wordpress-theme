@@ -50,11 +50,20 @@ function single_category_link() {
 function render_archives_list() {
   $cats = get_categories();
   if (count($cats) > 0) {
-    echo '<ul>';
+    echo '
+    <li>
+      <a href="/">Archives</a>
+      <div class="inner">
+        <ul>
+';
     foreach ( (array) $cats as $cat ) {
       echo '<li><a href="'.get_option('home').'/category/'.$cat->slug.'">'.ucfirst($cat->name).' ('.$cat->count.')</a></li>';
     }
-    echo '</ul>';
+    echo '
+        </ul>
+      </div>
+    </li>
+    ';
   }
 }
 
@@ -98,11 +107,20 @@ function render_pages_list() {
 function render_categories_list() {
   $cats = get_categories();
   if (count($cats) > 0) {
-    echo '<ul>';
+    echo '
+    <li>
+      <a href="'.get_option('home').'/categories">Categories</a>
+      <div class="inner">
+        <ul>
+';
     foreach ( (array) $cats as $cat ) {
       echo '<li><a href="'.get_option('home').'/category/'.$cat->slug.'">'.ucfirst($cat->name).' ('.$cat->count.')</a></li>';
     }
-    echo '</ul>';
+    echo '
+        </ul>
+      </div>
+    </li>
+    ';
   }
 }
 

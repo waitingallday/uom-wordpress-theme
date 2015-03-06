@@ -14,7 +14,7 @@
     <li>
       <a href="/">Archives</a>
       <div class="inner">
-				<?php wp_get_atchives(); ?>
+				<?php wp_get_archives(); ?>
       </div>
     </li>
     <?php end; ?>

@@ -10,14 +10,17 @@
   	<?php
   		render_pages_list();
   		render_categories_list();
-  		if (count_active_categories() > 0): ?>
+  		if (count_active_categories() > 0) {
+  			echo '
     <li>
       <a href="/">Archives</a>
-      <div class="inner">
-				<?php wp_get_archives(); ?>
+      <div class="inner">';
+      	wp_get_archives();
+      	echo '
       </div>
     </li>
-    <?php endif; ?>
+';
+    	} ?>
 		<li>
 		  <form action="<?php echo get_option('home') ?>/" class="search" method="get">
 		    <fieldset>

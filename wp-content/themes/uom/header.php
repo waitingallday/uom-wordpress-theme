@@ -13,8 +13,8 @@
   <title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 
   <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.6/uom.css">
-  <script src="//uom-design-system.s3.amazonaws.com/v0.6/uom.js"></script>
+  <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v1.0/uom.css">
+  <script src="//uom-design-system.s3.amazonaws.com/v1.0/uom.js"></script>
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

@@ -138,8 +138,8 @@ Text Domain: kubrick
   max-width: 270px;
 }
 
-.uomcontent #sitemap fieldset .inline .search-button {
-  margin-top: 5px;
+.uomcontent [role="navigation"]#sitemap fieldset .inline .search-button {
+  margin-top: 0;
 }
 
 /* Admin bar override */

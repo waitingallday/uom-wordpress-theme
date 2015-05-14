@@ -5,7 +5,6 @@
  */
 
 get_header(); ?>
-
 <div class="floating"></div>
 <div role="main">
   <header class="banner" style="background-image:url(<?php header_image(); ?>)">

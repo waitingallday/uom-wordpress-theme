@@ -137,8 +137,20 @@ Text Domain: kubrick
   padding-top: 15px;
 }
 
+.uomcontent .news-index p.topic a,
+.uomcontent .news-index .meta a {
+  color: #aaa;
+}
+
 .uomcontent .news-index .meta time {
   padding-right: 15px;
+}
+
+.uomcontent .news-index .meta a:hover,
+.uomcontent .news-index p.topic a:hover,
+.uomcontent .news-index h1 a:hover {
+  color: #0076de;
+  text-decoration: underline;
 }
 
 .uomcontent #respond {

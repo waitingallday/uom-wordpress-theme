@@ -125,10 +125,15 @@ Text Domain: kubrick
   padding-bottom: 30popx;
 }
 
+.uomcontent .news-index .meta,
 .uomcontent .comment .comment-meta a,
 .uomcontent .comment .reply a {
   color: #aaa;
   font-size: .8em;
+}
+
+.uomcontent .news-index .meta time {
+  padding-right: 15px;
 }
 
 .uomcontent #respond {

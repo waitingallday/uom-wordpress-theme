@@ -122,14 +122,19 @@ Text Domain: kubrick
 }
 
 .uomcontent .comment .comment-meta {
-  padding-bottom: 30popx;
+  padding-bottom: 30px;
 }
 
-.uomcontent .news-index .meta,
 .uomcontent .comment .comment-meta a,
 .uomcontent .comment .reply a {
   color: #aaa;
   font-size: .8em;
+}
+
+.uomcontent .news-index .meta {
+  color: #aaa;
+  font-size: .8em;
+  padding-top: 15px;
 }
 
 .uomcontent .news-index .meta time {

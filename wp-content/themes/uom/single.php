@@ -33,7 +33,7 @@ get_header(); ?>
 
 		<aside>
       <div>
-        <time datetime="<?php echo get_the_time('Y-m-j') ?>2014-09-22"><?php echo get_the_time('j F Y') ?></time>
+        <time datetime="<?php echo get_the_time('Y-m-j') ?>"><?php echo get_the_time('j F Y') ?></time>
       </div>
       <div>
 	      <p>

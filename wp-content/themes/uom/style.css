@@ -12,7 +12,7 @@ Text Domain: kubrick
 	http://www.opensource.org/licenses/gpl-license.php
 
 */
-.uomcontent .news-index {
+.uomcontent [role="main"] .news-index {
   max-width: 900px;
 }
 
@@ -133,7 +133,7 @@ Text Domain: kubrick
 
 .uomcontent #respond {
   margin-left: 0;
-  max-width: 900px;
+  max-width: 700px;
 }
 
 .uomcontent #sitemap form.search {

@@ -28,7 +28,11 @@ get_header(); ?>
 			  	<?php single_category_link(); ?>
 		      <h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 		      <?php the_content('Read more'); ?>
-			    <?php edit_post_link('Edit'); ?>
+			    <p>
+			    	Posted <time datetime="<?php echo get_the_time('Y-m-j') ?>"><?php echo get_the_time('j F Y') ?></time>
+				    <?php comments_popup_link(__('No Comments &#187;', 'kubrick'), __('1 Comment &#187;', 'kubrick'), __('% Comments &#187;', 'kubrick'), '', __('Comments Closed', 'kubrick') ); ?>
+				    <?php edit_post_link('Edit'); ?>
+				  </p>
 			  </article>
 			<?php endwhile; ?>
 			</div>

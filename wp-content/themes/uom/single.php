@@ -23,7 +23,7 @@ get_header(); ?>
 	<?php endif; ?>
 		<div class="entry article">
 			<h1><?php the_title(); ?></h1>
-			<?php the_content(); ?>
+			<section class="with-figure"><?php the_content(); ?></section>
       <?php edit_post_link('Edit'); ?>
 
 			<footer></footer>

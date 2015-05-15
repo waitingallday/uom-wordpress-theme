@@ -22,7 +22,7 @@ get_header(); ?>
 	<div class="post" id="post-<?php the_ID(); ?>">
 		<div class="entry">
 			<h1><?php the_title(); ?></h1>
-			<?php the_content(); ?>
+			<section class="with-figure"><?php the_content(); ?></section>
 		</div>
 	</div>
 

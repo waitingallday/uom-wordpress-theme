@@ -19,12 +19,14 @@ get_header(); ?>
 	<header class="banner"<?php echo $banner ?>></header>
 	<?php endif; ?>
 
-	<div class="post" id="post-<?php the_ID(); ?>">
-		<div class="entry">
-			<h1><?php the_title(); ?></h1>
-			<section class="with-figure"><?php the_content(); ?></section>
+	<section>
+		<div class="post" id="post-<?php the_ID(); ?>">
+			<div class="entry">
+				<h1><?php the_title(); ?></h1>
+				<?php the_content(); ?>
+			</div>
 		</div>
-	</div>
+	</section>
 
 	<?php endwhile; endif; ?>
 	<?php edit_post_link('Edit'); ?>

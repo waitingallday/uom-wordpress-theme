@@ -17,33 +17,36 @@ get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 	<?php if (count($banner) > 0): ?>
 	<header class="banner"<?php echo $banner ?>></header>
-	<article class="news" id="post-<?php the_ID(); ?>">
-	<?php else: ?>
-	<article class="news noheader" id="post-<?php the_ID(); ?>">
-	<?php endif; ?>
-		<div class="entry article">
-			<h1><?php the_title(); ?></h1>
-			<section class="with-figure"><?php the_content(); ?></section>
-      <?php edit_post_link('Edit'); ?>
 
-			<footer></footer>
-			<?php comments_template(); ?>
-		</div>
+  <section>
+  	<article class="news" id="post-<?php the_ID(); ?>">
+  	<?php else: ?>
+  	<article class="news noheader" id="post-<?php the_ID(); ?>">
+  	<?php endif; ?>
+  		<div class="entry article">
+  			<h1><?php the_title(); ?></h1>
+  			<?php the_content(); ?>
+        <?php edit_post_link('Edit'); ?>
 
-		<aside>
-      <div>
-        <time datetime="<?php echo get_the_time('Y-m-j') ?>2014-09-22"><?php echo get_the_time('j F Y') ?></time>
-      </div>
-      <div>
-	      <p>
-	        <em>Categories</em>
-	      </p>
-	      <?php echo get_the_category_list(); ?>
-	    </div>
-		</aside>
+  			<footer></footer>
+  			<?php comments_template(); ?>
+  		</div>
 
-		<footer></footer>
-	</article>
+  		<aside>
+        <div>
+          <time datetime="<?php echo get_the_time('Y-m-j') ?>2014-09-22"><?php echo get_the_time('j F Y') ?></time>
+        </div>
+        <div>
+  	      <p>
+  	        <em>Categories</em>
+  	      </p>
+  	      <?php echo get_the_category_list(); ?>
+  	    </div>
+  		</aside>
+
+  		<footer></footer>
+  	</article>
+  </section>
 
 <?php endwhile; else: ?>
 		<p><?php _e('Sorry, no posts matched your criteria.', 'kubrick'); ?></p>
